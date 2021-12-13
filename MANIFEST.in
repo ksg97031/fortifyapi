@@ -1,9 +1,9 @@
 include docs/*
 include *.rst
 exclude Jenkinsfile
-exclude fortifyapi/api.py
-exclude fortifyapi/client.py
-exclude fortifyapi/exceptions.py
-exclude fortifyapi/query.py
-exclude fortifyapi/template.py
+global-exclude api.py
+global-exclude client.py
+global-exclude exceptions.py
+global-exclude query.py
+global-exclude template.py
 exclude scripts/circleci-pypi-publish.sh
