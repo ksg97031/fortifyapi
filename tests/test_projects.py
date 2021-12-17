@@ -71,6 +71,15 @@ class TestProjects(TestCase):
             self.assertTrue(version['active'])
             # is it committed?
             self.assertTrue(version['committed'])
+
+            version = client.projects.upsert("Unit Test Python", 'always')
+            self.assertTrue(version['active'])
+            self.assertTrue(version['committed'])
+
+            version = client.projects.upsert("Unit Test Python", 'upsert')
+            self.assertTrue(version['active'])
+            self.assertTrue(version['committed'])
+
         finally:
             version.delete()
 

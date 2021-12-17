@@ -17,9 +17,12 @@ class Constants(object):
     def __init__(self, conf=None):
         if conf:
             self.CONF_FILE = conf
+        else:
+            self.CONF_FILE = os.path.join(os.path.dirname(__file__), '..', 'settings-test.yaml')
         try:
             if yaml:
                 with open(self.CONF_FILE, 'r') as f:
+                    print(f"Loading {self.CONF_FILE}")
                     self._settings = yaml.load(f, Loader=yaml.FullLoader)
             else:
                 self._settings = {}

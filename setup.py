@@ -41,7 +41,7 @@ setup(
     license='MIT',
     zip_safe=True,
     test_suite='nose.collector',
-    tests_require=['nose'],
+    tests_require=['nose', 'pyyaml'],
     install_requires=['requests'],
     keywords=['fortify', 'api', 'security', 'software', 'microfocus', 'ssc', 'sast'],
     classifiers=[

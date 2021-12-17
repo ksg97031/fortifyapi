@@ -253,9 +253,8 @@ class Project(SSCObject):
             # should be the first one
             project = projects[0]
             # but check if the version is there...
-            for v in project.versions.list():
-                if v['name'] == version_name:
-                    return v
+            for v in project.versions.list(q=Query().query("name", version_name)):
+                return v
             return self.create(project_name, version_name, project_id=project['id'], description=description, active=active,
                                committed=committed, issue_template_id=issue_template_id, template=template)
 

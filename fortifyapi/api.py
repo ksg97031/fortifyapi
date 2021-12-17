@@ -14,6 +14,7 @@ class FortifySSCAPI:
         :param url: url to ssc, including the path. E.g. `https://fortifyssc/ssc`
         :param auth: Authentication, either a token str or a (username, password) tuple
         """
+        assert url, "Missing SSC URL"
         self.url = url.rstrip('/')
         self._token = None
         self.__user = None
